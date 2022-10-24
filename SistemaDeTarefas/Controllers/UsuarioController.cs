@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SistemaDeTarefas.Models;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SistemaDeTarefas.Controllers
 {
@@ -7,5 +9,10 @@ namespace SistemaDeTarefas.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+        [HttpGet]
+        public ActionResult<List<Usuario>> BuscarTodosUsuarios()
+        {
+            return Ok(); 
+        }
     }
 }

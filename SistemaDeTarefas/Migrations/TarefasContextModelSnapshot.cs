@@ -24,18 +24,15 @@ namespace SistemaDeTarefas.Migrations
 
             modelBuilder.Entity("SistemaDeTarefas.Models.Tarefa", b =>
                 {
-                    b.Property<int?>("UsuarioTarefaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("UsuarioTarefaId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Descricao")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -48,7 +45,10 @@ namespace SistemaDeTarefas.Migrations
                     b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.HasKey("UsuarioTarefaId");
+                    b.Property<int?>("UsuarioTarefaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("UsuarioId");
 

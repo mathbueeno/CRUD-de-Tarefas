@@ -4,7 +4,7 @@
 
 namespace SistemaDeTarefas.Migrations
 {
-    public partial class InitalCreate : Migration
+    public partial class CreateInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,17 +26,17 @@ namespace SistemaDeTarefas.Migrations
                 name: "Tarefas",
                 columns: table => new
                 {
-                    UsuarioTarefaId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Id = table.Column<int>(type: "int", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
+                    UsuarioTarefaId = table.Column<int>(type: "int", nullable: true),
                     UsuarioId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tarefas", x => x.UsuarioTarefaId);
+                    table.PrimaryKey("PK_Tarefas", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Tarefas_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,

@@ -8,5 +8,8 @@ namespace SistemaDeTarefas.Models
         public string? Nome { get; set; }
         public string? Descricao { get; set; }
         public StatusTarefa Status { get; set; }
+        public int? UsuarioTarefaId { get; set; }
+
+        public virtual Usuario? Usuario { get; set;}
     }
 }

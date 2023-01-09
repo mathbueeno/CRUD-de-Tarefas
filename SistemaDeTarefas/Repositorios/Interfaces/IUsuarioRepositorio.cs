@@ -2,7 +2,7 @@
 
 namespace SistemaDeTarefas.Repositorios.Interfaces
 {
-    public interface IUsuarioRepositorio
+    public interface ITarefaRepositorio
     {
         Task<List<Usuario>> BuscarTodosUsuarios();
         Task<Usuario> BuscarPorId(int id);
